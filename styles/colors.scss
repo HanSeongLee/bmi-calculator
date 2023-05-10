@@ -1,0 +1,27 @@
+:root {
+  // Colors
+  // Base Colors
+  --blue-color: #345FF6;
+  --gunmetal-color: #253347;
+  --dark-electric-blue-color: #5E6E85;
+  --borders-color: #D8E2E7;
+  --black-color: #000000;
+  --pure-white-color: #FFFFFF;
+  --water-gradient-color: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
+  --blue-gradient-color: linear-gradient(90deg, #345FF7 0%, #587DFF 100%);
+
+  // Primary Color
+  --primary-color: var(--blue-color);
+  --primary-150-color: rgba(52, 95, 246, 0.15);
+
+  // Secondary Color
+  --secondary-color: var(--gunmetal-color);
+  --secondary-250-color: rgba(37, 51, 71, 0.25);
+
+  // Neutral Color
+  --neutral-color: var(--dark-electric-blue-color);
+
+  --background-color: var(--pure-white-color);
+  --border-color: var(--borders-color);
+  --box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+}
