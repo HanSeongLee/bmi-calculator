@@ -1,0 +1,35 @@
+@mixin typography($size, $weight, $line-height, $letter-spacing, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  color: $color;
+}
+
+@mixin heading($size, $weight, $line-height) {
+  @include typography($size, $weight, $line-height, -0.05em, var(--secondary-color));
+}
+
+@mixin heading-xl {
+  @include heading(64px, 600, 110%);
+}
+
+@mixin heading-l {
+  @include heading(48px, 600, 110%);
+}
+
+@mixin heading-m {
+  @include heading(24px, 600, 29px);
+}
+
+@mixin heading-s {
+  @include heading(20px, 600, 24px);
+}
+
+@mixin body-m {
+  @include typography(16px, 400, 150%, initial, var(--neutral-color));
+}
+
+@mixin body-s {
+  @include typography(14px, 400, 150%, initial, var(--neutral-color));
+}
