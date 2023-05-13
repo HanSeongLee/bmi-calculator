@@ -1,0 +1,57 @@
+@import "styles/typography";
+
+.textField {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    @include body-s;
+    margin-bottom: 8px;
+  }
+
+  .inputWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input {
+    @include heading-m;
+
+    width: 100%;
+    min-width: 132px;
+    height: 69px;
+    background: var(--pure-white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    caret-color: var(--primary-color);
+    padding: 20px 24px;
+    outline: none;
+
+    &::placeholder {
+      color: var(--secondary-250-color);
+    }
+
+    &:focus {
+      border-color: var(--primary-color);
+    }
+
+    &[type='number'] {
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          appearance: none;
+          -webkit-appearance: none;
+        }
+    }
+  }
+
+  .unitName {
+    @include heading-m;
+
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    color: var(--primary-color);
+    transform: translateY(-50%);
+  }
+}
