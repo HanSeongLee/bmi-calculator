@@ -1,0 +1,73 @@
+@import "styles/typography";
+
+.bmiForm {
+  background: var(--pure-white-color);
+  border-radius: 16px;
+  box-shadow: var(--box-shadow);
+  padding: 24px;
+
+  fieldset {
+    min-width: initial;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border: none;
+    margin-bottom: 24px;
+  }
+
+  legend {
+    @include heading-m;
+
+    margin-bottom: 24px;
+  }
+
+  .fieldWrapper {
+    display: flex;
+    gap: 24px;
+
+    & > * {
+      flex: 1;
+    }
+  }
+
+  .metricFieldContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .inputFieldWrapper {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .resultBox {
+    background: var(--blue-gradient-color);
+    border-radius: 16px;
+    padding: 32px;
+
+    .title {
+      @include body-m;
+
+      font-weight: 600;
+      color: var(--pure-white-color);
+      margin-bottom: 8px;
+    }
+
+    .result {
+      @include heading-l;
+
+      display: block;
+      color: var(--pure-white-color);
+      margin-bottom: 24px;
+    }
+
+    .description {
+      @include body-s;
+
+      color: var(--pure-white-color);
+    }
+  }
+}
