@@ -3,25 +3,23 @@ import styles from 'components/forms/BMIForm/style.module.scss';
 import cn from 'classnames';
 import RadioButton from 'components/commons/RadioButton';
 import TextField from 'components/commons/TextField';
-import { MeasurementType } from 'types/bmi';
+import { BMIResult, MeasurementType } from 'types/bmi';
+import { FT_PER_CM, IN_PER_CM, LBS_PER_KG, ST_PER_KG } from 'types/measurement';
 
 interface IProps extends FormHTMLAttributes<HTMLFormElement> {
     measurementType: MeasurementType;
     onChangeMeasurement: (value: MeasurementType) => void;
     onChangeHeight: (value: number) => void;
     onChangeWeight: (value: number) => void;
-    bmiResult: number;
+    result: BMIResult,
 }
 
-const FT_PER_CM = 30.48;
-const IN_PER_CM = 2.56;
-const ST_PER_KG = 6.35029;
-const LBS_PER_KG = 0.453592;
-
 const BMIForm: React.FC<IProps> = ({
-                                       measurementType, onChangeMeasurement, bmiResult, onChangeHeight,
+                                       measurementType, onChangeMeasurement, result, onChangeHeight,
                                        onChangeWeight, className, ...props
                                    }) => {
+    const { bmi, idealWeightRange } = result;
+
     return (
         <form className={cn(styles.bmiForm, className)}
               {...props}
@@ -96,18 +94,20 @@ const BMIForm: React.FC<IProps> = ({
                 )}
             </fieldset>
 
-            <div className={styles.resultBox}>
-                <div className={styles.title}>
-                    Your BMI is...
-                    <strong className={styles.result}>
-                        {bmiResult.toFixed(1)}
-                    </strong>
+            {bmi > 0 && (
+                <div className={styles.resultBox}>
+                    <div className={styles.title}>
+                        Your BMI is...
+                        <strong className={styles.result}>
+                            {bmi.toFixed(1)}
+                        </strong>
+                    </div>
+                    <p className={styles.description}>
+                        Your BMI suggests you’re a healthy weight. Your ideal weight is
+                        between <strong>{idealWeightRange.lower.toFixed(1)}kgs</strong> - <strong>{idealWeightRange.upper.toFixed(1)}kgs</strong>.
+                    </p>
                 </div>
-                <p className={styles.description}>
-                    Your BMI suggests you’re a healthy weight. Your ideal weight is
-                    between <strong>63.3kgs</strong> - <strong>85.2kgs</strong>.
-                </p>
-            </div>
+            )}
         </form>
     );
 };

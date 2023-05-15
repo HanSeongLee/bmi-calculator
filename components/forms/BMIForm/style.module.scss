@@ -12,7 +12,6 @@
     flex-direction: column;
     gap: 24px;
     border: none;
-    margin-bottom: 24px;
   }
 
   legend {
@@ -47,6 +46,7 @@
     background: var(--blue-gradient-color);
     border-radius: 16px;
     padding: 32px;
+    margin-top: 24px;
 
     .title {
       @include body-m;

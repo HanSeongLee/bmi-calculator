@@ -22,13 +22,25 @@ type Story = StoryObj<typeof BMIForm>;
 export const Metric: Story = {
     args: {
         measurementType: MeasurementType.METRIC,
-        bmiResult: 0,
+        result: {
+            bmi: 0,
+            idealWeightRange: {
+                lower: 0,
+                upper: 0,
+            },
+        },
     },
 };
 
 export const Imperial: Story = {
     args: {
         measurementType: MeasurementType.IMPERIAL,
-        bmiResult: 0,
+        result: {
+            bmi: 0,
+            idealWeightRange: {
+                lower: 0,
+                upper: 0,
+            },
+        },
     },
 };
