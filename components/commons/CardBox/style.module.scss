@@ -1,0 +1,48 @@
+@import "styles/typography";
+
+.cardBox {
+
+  &.sm {
+    background: var(--pure-white-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 16px;
+    padding: 24px;
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .title {
+      @include heading-s;
+    }
+  }
+
+  &.lg {
+    .header {
+      margin-bottom: 24px;
+    }
+
+    .icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 32px;
+    }
+
+    .title {
+      @include heading-m;
+    }
+  }
+
+  .description {
+    @include body-m;
+
+  }
+}
