@@ -11,3 +11,5 @@ export type BMIResult = {
     },
 };
 
+export const HEALTHY_BMI_LOWER = 18.5;
+export const HEALTHY_BMI_UPPER = 24.9;
