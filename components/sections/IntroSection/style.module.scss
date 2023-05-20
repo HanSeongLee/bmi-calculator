@@ -1,0 +1,23 @@
+@import "styles/typography";
+
+.introSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .image {
+    max-width: 375px;
+    width: 100%;
+    margin-bottom: 48px;
+  }
+
+  .title {
+    @include heading(32px, 600, 110%);
+
+    margin-bottom: 32px;
+  }
+
+  .description {
+    @include body-m;
+  }
+}
