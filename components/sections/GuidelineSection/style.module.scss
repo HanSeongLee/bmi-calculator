@@ -1,0 +1,27 @@
+
+.guidelineSection {
+  position: relative;
+  padding: 56px 0;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--water-gradient-color);
+    opacity: 0.25;
+    content: "";
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .cardBoxContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    list-style: none;
+  }
+}
