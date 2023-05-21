@@ -1,0 +1,29 @@
+@import "styles/typography";
+
+.limitationSection {
+  padding: 72px 0 96px;
+
+  .header {
+    margin-bottom: 56px;
+  }
+
+  .title {
+    @include heading(32px, 600, 110%);
+
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .description {
+    @include body-m;
+
+    text-align: center;
+  }
+
+  .cardBoxContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+  }
+}
