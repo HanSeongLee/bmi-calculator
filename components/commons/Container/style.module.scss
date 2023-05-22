@@ -1,5 +1,10 @@
+@import "styles/utils";
 
 .container {
   max-width: 327px;
   margin: 0 auto;
+
+  @include media(">tablet") {
+    max-width: 686px;
+  }
 }
