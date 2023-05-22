@@ -1,3 +1,4 @@
+@import "styles/utils";
 
 .header {
   position: absolute;
@@ -8,4 +9,8 @@
   justify-content: center;
   padding: 32px 0 24px;
   z-index: 100;
+
+  @include media(">tablet") {
+    padding-bottom: 40px;
+  }
 }
