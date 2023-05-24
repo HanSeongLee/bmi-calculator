@@ -17,12 +17,11 @@ const CardBox: React.FC<IProps> = ({
         }, className)}
                  {...props}
         >
+            <img className={styles.icon}
+                 src={icon}
+                 alt={''}
+            />
             <header className={styles.header}>
-                <img className={styles.icon}
-                     src={icon}
-                     alt={''}
-                />
-
                 {React.createElement(heading, {
                     className: styles.title,
                 }, title)}

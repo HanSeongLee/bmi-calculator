@@ -1,18 +1,22 @@
+@import "styles/utils";
 @import "styles/typography";
 
 .cardBox {
+  display: grid;
 
   &.sm {
+    grid-auto-rows: 32px auto;
+    grid-auto-columns: 32px 1fr;
+    gap: 16px;
+    grid-template-areas: "icon header"
+                          "description description";
     background: var(--pure-white-color);
     box-shadow: var(--box-shadow);
     border-radius: 16px;
     padding: 24px;
 
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 16px;
+    @include media(">tablet") {
+      padding: 32px;
     }
 
     .icon {
@@ -26,23 +30,45 @@
   }
 
   &.lg {
-    .header {
-      margin-bottom: 24px;
+    grid-template-areas: "icon" "header" "description";
+
+    @include media(">tablet") {
+      grid-template-areas: "icon header"
+                           "icon description";
+      gap: 0 40px;
+      align-items: center;
     }
 
     .icon {
       width: 64px;
       height: 64px;
       margin-bottom: 32px;
+
+      @include media(">tablet") {
+        margin-bottom: 0;
+      }
     }
 
     .title {
       @include heading-m;
+
+      margin-bottom: 24px;
     }
+  }
+
+  .icon {
+    grid-area: icon;
+  }
+
+  .header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
   }
 
   .description {
     @include body-m;
 
+    grid-area: description;
   }
 }
