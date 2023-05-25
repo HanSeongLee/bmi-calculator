@@ -55,6 +55,7 @@ const BMIForm: React.FC<IProps> = ({
                                    name={'height'}
                                    label={'Height'}
                                    unitName={'cm'}
+                                   placeholder={'0'}
                                    onChange={(e) => {
                                        onChangeHeight(Number(e.target.value));
                                    }}
@@ -64,6 +65,7 @@ const BMIForm: React.FC<IProps> = ({
                                    name={'weight'}
                                    label={'Weight'}
                                    unitName={'kg'}
+                                   placeholder={'0'}
                                    onChange={(e) => {
                                        onChangeWeight(Number(e.target.value));
                                    }}
@@ -148,6 +150,7 @@ const ConvertableNumberTextFieldSet = (
                        name={`${label.toLowerCase()}-${firstUnitName}`}
                        label={label}
                        unitName={firstUnitName}
+                       placeholder={'0'}
                        onChange={(e) => {
                            handleChangeFirst(Number(e.target.value));
                        }}
@@ -157,6 +160,7 @@ const ConvertableNumberTextFieldSet = (
                        name={`${label.toLowerCase()}-${secondUnitName}`}
                        label={''}
                        unitName={secondUnitName}
+                       placeholder={'0'}
                        onChange={(e) => {
                            handleChangeSecond(Number(e.target.value));
                        }}
