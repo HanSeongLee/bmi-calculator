@@ -1,3 +1,4 @@
+@import "styles/utils";
 @import "styles/typography";
 
 .bmiForm {
@@ -6,12 +7,20 @@
   box-shadow: var(--box-shadow);
   padding: 24px;
 
+  @include media(">tablet") {
+    padding: 32px;
+  }
+
   fieldset {
     min-width: initial;
     display: flex;
     flex-direction: column;
     gap: 24px;
     border: none;
+
+    @include media(">tablet") {
+      gap: 32px;
+    }
   }
 
   legend {
@@ -33,6 +42,16 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+
+    @include media(">tablet") {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 24px;
+
+      & > * {
+        flex: 1;
+      }
+    }
   }
 
   .inputFieldWrapper {
@@ -40,6 +59,10 @@
     display: flex;
     align-items: flex-end;
     gap: 16px;
+
+    @include media(">tablet") {
+      flex: 100%;
+    }
   }
 
   .resultBox {
@@ -48,12 +71,26 @@
     padding: 32px;
     margin-top: 24px;
 
+    @include media(">tablet") {
+      display: flex;
+      align-items: center;
+      border-radius: 16px 90px 90px 16px;
+
+      & > * {
+        flex: 1;
+      }
+    }
+
     .title {
       @include body-m;
 
       font-weight: 600;
       color: var(--pure-white-color);
       margin-bottom: 8px;
+
+      @include media(">tablet") {
+        margin-bottom: 0;
+      }
     }
 
     .result {
@@ -62,6 +99,11 @@
       display: block;
       color: var(--pure-white-color);
       margin-bottom: 24px;
+
+      @include media(">tablet") {
+        margin-bottom: 0;
+        margin-top: 8px;
+      }
     }
 
     .description {
