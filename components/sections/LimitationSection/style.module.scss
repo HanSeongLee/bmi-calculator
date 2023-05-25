@@ -1,3 +1,4 @@
+@import "styles/utils";
 @import "styles/typography";
 
 .limitationSection {
@@ -25,5 +26,21 @@
     flex-direction: column;
     gap: 16px;
     list-style: none;
+
+    @include media(">tablet") {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px 15px;
+
+      li {
+        flex: 1 0 48.5%;
+
+        max-width: 365px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
   }
 }
