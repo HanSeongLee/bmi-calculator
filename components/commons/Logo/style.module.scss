@@ -1,3 +1,4 @@
+@import "styles/utils";
 
 .logo {
   display: flex;
@@ -8,6 +9,11 @@
     svg {
       width: 40px;
       height: 40px;
+
+      @include media(">desktop") {
+        width: 64px;
+        height: 64px;
+      }
     }
   }
 }
