@@ -110,6 +110,16 @@ const BMIForm: React.FC<IProps> = ({
                     </p>
                 </div>
             )}
+            {bmi === 0 && (
+                <div className={styles.welcomeBox}>
+                    <div className={styles.title}>
+                        Welcome!
+                    </div>
+                    <p className={styles.description}>
+                        Enter your height and weight and you’ll see your BMI result here
+                    </p>
+                </div>
+            )}
         </form>
     );
 };

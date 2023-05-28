@@ -65,16 +65,23 @@
     }
   }
 
-  .resultBox {
+  @mixin blueBox {
     background: var(--blue-gradient-color);
     border-radius: 16px;
     padding: 32px;
     margin-top: 24px;
 
     @include media(">tablet") {
+      border-radius: 16px 90px 90px 16px;
+    }
+  }
+
+  .resultBox {
+    @include blueBox;
+
+    @include media(">tablet") {
       display: flex;
       align-items: center;
-      border-radius: 16px 90px 90px 16px;
 
       & > * {
         flex: 1;
@@ -104,6 +111,23 @@
         margin-bottom: 0;
         margin-top: 8px;
       }
+    }
+
+    .description {
+      @include body-s;
+
+      color: var(--pure-white-color);
+    }
+  }
+
+  .welcomeBox {
+    @include blueBox;
+
+    .title {
+      @include heading-m;
+
+      color: var(--pure-white-color);
+      margin-bottom: 16px;
     }
 
     .description {
