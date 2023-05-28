@@ -6,17 +6,19 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
 
 }
 
+const DEFAULT_BMI_RESULT: BMIResult = {
+    bmi: 0,
+    idealWeightRange: {
+        lower: 0,
+        upper: 0,
+    },
+};
+
 const BMIFormContainer: React.FC<IProps> = (props) => {
     const [measurementType, setMeasurementType] = useState<MeasurementType>(MeasurementType.METRIC);
     const [height, setHeight] = useState<number | undefined>(undefined);
     const [weight, setWeight] = useState<number | undefined>(undefined);
-    const [bmiResult, setBMIResult] = useState<BMIResult>({
-        bmi: 0,
-        idealWeightRange: {
-            lower: 0,
-            upper: 0,
-        },
-    });
+    const [bmiResult, setBMIResult] = useState<BMIResult>(DEFAULT_BMI_RESULT);
 
     const calculateBMI = (height: number, weight: number): number => {
         return weight / Math.pow(height / 100, 2);
@@ -24,6 +26,7 @@ const BMIFormContainer: React.FC<IProps> = (props) => {
 
     const handleChangeMeasurement = (value: MeasurementType) => {
         setMeasurementType(value);
+        setBMIResult(DEFAULT_BMI_RESULT);
     };
 
     const handleChangeHeight = (value: number) => {
