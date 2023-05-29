@@ -14,12 +14,16 @@ const HeroSection: React.FC<IProps> = ({ className, ...props }) => {
                  {...props}
         >
             <Container className={styles.container}>
-                <h2 className={styles.title}>
-                    Body Mass <br/>Index Calculator
-                </h2>
-                <p className={styles.description}>
-                    Better understand your weight in relation to your height using our body mass index (BM) calculator. While BMI is not the sole determinant of a healthy weight, it offers a valuable starting point to evaluate your overall health and well-being.
-                </p>
+                <div className={styles.content}>
+                    <h2 className={styles.title}>
+                        Body Mass <br />Index Calculator
+                    </h2>
+                    <p className={styles.description}>
+                        Better understand your weight in relation to your height using our body mass index (BM)
+                        calculator. While BMI is not the sole determinant of a healthy weight, it offers a valuable
+                        starting point to evaluate your overall health and well-being.
+                    </p>
+                </div>
                 <BMIFormContainer />
             </Container>
         </section>
