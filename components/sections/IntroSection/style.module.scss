@@ -5,11 +5,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 72px 0;
+
+  @include media(">desktop") {
+    padding: 65px 0 96px;
+  }
 
   .container {
+
     @include media(">tablet") {
       display: flex;
       align-items: center;
+    }
+
+    @include media(">desktop") {
+      position: relative;
+      justify-content: space-between;
+    }
+
+    &::after {
+
+      @include media(">desktop") {
+        position: absolute;
+        top: -52px;
+        right: 27px;
+        width: 86px;
+        height: 200px;
+        background: url("/img/pattern-curved-line-left.svg") no-repeat;
+        content: "";
+      }
     }
   }
 
@@ -23,6 +47,11 @@
       left: -155px;
       transform: initial;
     }
+
+    @include media(">desktop") {
+      width: initial;
+      left: initial;
+    }
   }
 
   .image {
@@ -35,11 +64,23 @@
       width: 435px;
       margin-bottom: 0;
     }
+
+    @include media(">desktop") {
+      max-width: 564px;
+      width: 564px;
+    }
   }
 
   .content {
     @include media(">tablet") {
       max-width: 331px;
+    }
+
+    @include media(">desktop") {
+      position: relative;
+      max-width: 465px;
+      margin-top: auto;
+      margin-bottom: 40px;
     }
   }
 
@@ -47,6 +88,10 @@
     @include heading(32px, 600, 110%);
 
     margin-bottom: 32px;
+
+    @include media(">desktop") {
+      @include heading-l;
+    }
   }
 
   .description {
