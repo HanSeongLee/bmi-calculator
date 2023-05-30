@@ -37,8 +37,8 @@
     }
 
     &[type='number'] {
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
           appearance: none;
           -webkit-appearance: none;
         }
@@ -52,6 +52,7 @@
     top: 50%;
     right: 24px;
     color: var(--primary-color);
+    background: var(--pure-white-color);
     transform: translateY(-50%);
   }
 }
