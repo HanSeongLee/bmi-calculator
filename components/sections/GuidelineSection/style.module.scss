@@ -1,7 +1,12 @@
+@import "styles/utils";
 
 .guidelineSection {
   position: relative;
   padding: 56px 0;
+
+  @include media(">desktop") {
+    padding: 72px 0 96px;
+  }
 
   &::before {
     position: absolute;
@@ -12,6 +17,14 @@
     background: var(--water-gradient-color);
     opacity: 0.25;
     content: "";
+
+    @include media(">desktop") {
+      max-width: 1392px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 35px;
+    }
   }
 
   .container {
@@ -23,5 +36,11 @@
     flex-direction: column;
     gap: 40px;
     list-style: none;
+
+    @include media(">desktop") {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
   }
 }
