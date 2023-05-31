@@ -39,6 +39,12 @@
       align-items: center;
     }
 
+    @include media(">desktop") {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     .icon {
       width: 64px;
       height: 64px;
@@ -46,6 +52,10 @@
 
       @include media(">tablet") {
         margin-bottom: 0;
+      }
+
+      @include media(">desktop") {
+        margin-bottom: 45px;
       }
     }
 
