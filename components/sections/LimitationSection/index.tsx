@@ -41,7 +41,7 @@ const LimitationSection: React.FC<IProps> = ({ className, ...props }) => {
         <section className={cn(styles.limitationSection, className)}
                  {...props}
         >
-            <Container>
+            <Container className={styles.container}>
                 <header className={styles.header}>
                     <h2 className={styles.title}>
                         Limitations of BMI

@@ -4,8 +4,40 @@
 .limitationSection {
   padding: 72px 0 96px;
 
+  @include media(">desktop") {
+    padding: 120px 0;
+  }
+
+  .container {
+    @include media(">desktop") {
+      position: relative;
+      display: flex;
+      height: 704px;
+    }
+  }
+
   .header {
     margin-bottom: 56px;
+
+    @include media(">desktop") {
+      position: relative;
+      max-width: 564px;
+      height: fit-content;
+      z-index: 10;
+    }
+
+    &::before {
+
+      @include media(">desktop") {
+        position: absolute;
+        left: 165px;
+        bottom: -189px;
+        width: 94px;
+        height: 122px;
+        background: url("/img/pattern-curved-line-right.svg") no-repeat;
+        content: "";
+      }
+    }
   }
 
   .title {
@@ -13,12 +45,23 @@
 
     text-align: center;
     margin-bottom: 32px;
+
+    @include media(">desktop") {
+      @include heading-l;
+
+      text-align: left;
+      margin-bottom: 35px;
+    }
   }
 
   .description {
     @include body-m;
 
     text-align: center;
+
+    @include media(">desktop") {
+      text-align: left;
+    }
   }
 
   .cardBoxContainer {
@@ -32,14 +75,48 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 24px 15px;
+    }
 
-      li {
+    @include media(">desktop") {
+      position: absolute;
+      top: 0;
+      left: 199px;
+      max-width: 961px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      gap: 32px;
+    }
+
+    li {
+      & > * {
+        @include media(">tablet") {
+          max-width: 365px;
+        }
+      }
+
+      @include media(">tablet") {
         flex: 1 0 48.5%;
 
-        max-width: 365px;
         width: 100%;
         display: flex;
         justify-content: center;
+      }
+
+      @include media(">desktop") {
+        max-width: 365px;
+        display: flex;
+        justify-content: flex-end;
+
+        &:first-child {
+          max-width: initial;
+          flex: 100%;
+          margin-right: 99px;
+        }
+
+        &:last-child {
+          margin-right: 199px;
+        }
       }
     }
   }
