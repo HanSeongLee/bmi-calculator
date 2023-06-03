@@ -35,6 +35,7 @@
     @include media(">tablet") {
       grid-template-areas: "icon header"
                            "icon description";
+      grid-template-columns: 64px 1fr;
       gap: 0 40px;
       align-items: center;
     }
